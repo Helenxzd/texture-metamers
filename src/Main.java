@@ -10,8 +10,9 @@ import java.util.Random;
 public class Main {
     public void grayImg() {
         //image dimension
-        int width = 64;
-        int height = 64;
+        int width = 68;
+
+        int height = 68;
         //create buffered image object img
         BufferedImage img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         BufferedImage img1 = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
@@ -69,9 +70,9 @@ public class Main {
             for(int x = width/2; x < width; x++){
 //                int a = (int)(Math.random()*256); //alpha
                 ArrayList<Integer> avg1 = new ArrayList<>();
-                avg1.add(90);
-                avg1.add(135);
-                avg1.add(225);
+                avg1.add(15*3);
+                avg1.add(15*7);
+                avg1.add(15*15);
                 int ind = (int) (Math.random() * 3);
                 int r = avg1.get(ind);
                 int g = avg1.get(ind);
