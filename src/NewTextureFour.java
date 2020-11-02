@@ -22,14 +22,14 @@ public class NewTextureFour {
 //        }
 //        count5[4] += (68*68 - count);
 
-        double[] arr3 = new double[]{0.3333, 0.3334, 0.3333};
-        int[] count3 = new int[3];
+        double[] arr4 = new double[]{0.15, 0.35, 0.35, 0.15};
+        int[] count4 = new int[4];
         int count = 0;
-        for (int i = 0; i < 2; i++) {
-            count3[i] = (int) (68*68*arr3[i]);
-            count += count3[i];
+        for (int i = 0; i < 3; i++) {
+            count4[i] = (int) (68*68*arr4[i]);
+            count += count4[i];
         }
-        count3[2] += (68*68 - count);
+        count4[3] += (68*68 - count);
 
 
 
@@ -43,7 +43,7 @@ public class NewTextureFour {
         //file object
         File f = null;
 
-        int[] countgreyLeft = new int[3];
+        int[] countgreyLeft = new int[4];
         Arrays.fill(countgreyLeft, 0);
         int[] countgreyRight = new int[17];
         Arrays.fill(countgreyRight, 0);
@@ -58,11 +58,10 @@ public class NewTextureFour {
         map1.put(1, 255 / 32);
 
 
-        map.put(0, 0);
-        //map.put(1, 255 * 4 / 16);
-        map.put(1, 255 * 8 / 16);
-        //map.put(3, 255 * 12 / 16);
-        map.put(2, 255 * 16 / 16);
+        map.put(0, 50);
+        map.put(1, 98);
+        map.put(2, 157);
+        map.put(3, 205);
 //        map1.put(0, 255 * 2 / 16);
 //        map1.put(1, 255 * 8 / 16);
 //        map1.put(2, 255 * 14 / 16);
@@ -76,27 +75,27 @@ public class NewTextureFour {
             for (int x = 0; x < width; x++) {
 
                 double rnd = Math.random();
-                if (rnd < arr3[0]) {
+                if (rnd < arr4[0]) {
                     index = 0;
-                    if (countgreyLeft[0] == count3[0]) {
+                    if (countgreyLeft[0] == count4[0]) {
                         x--;
                         continue;
                     }
                 }
-                else if (rnd < arr3[0]+arr3[1]) {
+                else if (rnd < arr4[0]+arr4[1]) {
                     index = 1;
-                    if (countgreyLeft[1] == count3[1]) {
+                    if (countgreyLeft[1] == count4[1]) {
                         x--;
                         continue;
                     }
                 }
-//                else if (rnd < arr5[0]+arr5[1]+arr5[2]) {
-//                    index = 2;
-//                    if (countgreyLeft[2] == count5[2]) {
-//                        x--;
-//                        continue;
-//                    }
-//                }
+                else if (rnd < arr4[0]+arr4[1]+arr4[2]) {
+                    index = 2;
+                    if (countgreyLeft[2] == count4[2]) {
+                        x--;
+                        continue;
+                    }
+                }
 //                else if (rnd < arr5[0]+arr5[1]+arr5[2]+arr5[3]) {
 //                    index = 3;
 //                    if (countgreyLeft[3] == count5[3]) {
@@ -105,8 +104,8 @@ public class NewTextureFour {
 //                    }
 //                }
                 else {
-                    index = 2;
-                    if (countgreyLeft[2] == count3[2]) {
+                    index = 3;
+                    if (countgreyLeft[3] == count4[3]) {
                         x--;
                         continue;
                     }
@@ -148,7 +147,7 @@ public class NewTextureFour {
         System.out.println("left" + Arrays.toString(countgreyLeft));
         //System.out.println("right" + Arrays.toString(countgreyRight));
         try {
-            f = new File("./1013/1013_uni3.png");
+            f = new File("./1026/4_3.png");
             ImageIO.write(img, "png", f);
 //            f = new File("./outputgrey_mask.png");
 //            ImageIO.write(img1, "png", f);
